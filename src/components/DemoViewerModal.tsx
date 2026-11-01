@@ -39,6 +39,26 @@ export const DemoViewerModal: React.FC<DemoViewerModalProps> = ({
   const [viewport, setViewport] = useState<ViewportMode>('desktop');
   const [showBlueprint, setShowBlueprint] = useState(false);
 
+  // Keyboard navigation shortcuts
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (e.key === 'ArrowRight' && !['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement).tagName)) {
+        const currentIndex = allDemos.findIndex(d => d.id === demo.id);
+        const nextIndex = (currentIndex + 1) % allDemos.length;
+        onSelectDemo(allDemos[nextIndex]);
+      } else if (e.key === 'ArrowLeft' && !['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement).tagName)) {
+        const currentIndex = allDemos.findIndex(d => d.id === demo.id);
+        const prevIndex = (currentIndex - 1 + allDemos.length) % allDemos.length;
+        onSelectDemo(allDemos[prevIndex]);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [demo.id, allDemos, onClose, onSelectDemo]);
+
   // Render the matching demo component
   const renderDemoContent = () => {
     switch (demo.id) {

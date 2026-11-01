@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AgencyHeader } from './components/AgencyHeader';
 import { AgencyHero } from './components/AgencyHero';
 import { DemoShowcaseSection } from './components/DemoShowcaseSection';
+import { ProjectReadinessQuiz } from './components/ProjectReadinessQuiz';
 import { PricingCalculator } from './components/PricingCalculator';
 import { PackagesSection } from './components/PackagesSection';
 import { WhyChooseUs } from './components/WhyChooseUs';
@@ -11,6 +12,7 @@ import { AgencyFooter } from './components/AgencyFooter';
 import { DemoViewerModal } from './components/DemoViewerModal';
 import { InquiryModal } from './components/InquiryModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
+import { ShareFeedbackButton } from './components/ShareFeedbackModal';
 import { DEMO_PROJECTS } from './data/demoData';
 import { DemoProject, AccessibilitySettings } from './types';
 
@@ -185,6 +187,7 @@ export const App: React.FC = () => {
         <AgencyHero
           onExploreDemos={scrollToDemos}
           onOpenCalculator={scrollToCalculator}
+          onQuickLaunchDemo={handleLaunchDemo}
         />
 
         {/* 5 Demo Websites Showcase Grid */}
@@ -192,6 +195,17 @@ export const App: React.FC = () => {
           demos={DEMO_PROJECTS}
           onLaunchDemo={handleLaunchDemo}
           onOrderThisType={handleOrderThisType}
+        />
+
+        {/* Interactive Scope & Readiness Matcher */}
+        <ProjectReadinessQuiz
+          onSelectRecommendedPackage={handleSelectPackage}
+          onExploreDemo={handleLaunchDemo}
+          onOpenInquiry={() => {
+            setInquiryPackage('growth');
+            setInquiryEstimate(undefined);
+            setIsInquiryOpen(true);
+          }}
         />
 
         {/* Interactive Pricing Calculator with lowered starter pricing */}
@@ -264,6 +278,9 @@ export const App: React.FC = () => {
         initialDemoId={inquiryDemoId}
         initialEstimate={inquiryEstimate}
       />
+
+      {/* Floating Share Feedback Widget */}
+      <ShareFeedbackButton />
     </div>
   );
 };
