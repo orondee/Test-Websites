@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Calculator, CheckCircle2, MonitorPlay, Sparkles, Code2, ShieldCheck, Zap, Github } from 'lucide-react';
 import { AGENCY_STATS, DEMO_PROJECTS } from '../data/demoData';
 import { DemoProject } from '../types';
+import heroWorkspaceImg from '../assets/images/agency_hero_workspace_1793552555373.jpg';
 
 interface AgencyHeroProps {
   onExploreDemos: () => void;
@@ -122,7 +123,7 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
             {/* Visual Frame */}
             <div className="relative rounded-2xl overflow-hidden border border-neutral-200/90 dark:border-neutral-800 shadow-2xl aspect-4/3 sm:aspect-16/11 bg-neutral-100 dark:bg-neutral-900 group">
               <img
-                src="/src/assets/images/agency_hero_workspace_1793552555373.jpg"
+                src={heroWorkspaceImg}
                 alt="Oronde Web Studio editorial web design studio workspace"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"

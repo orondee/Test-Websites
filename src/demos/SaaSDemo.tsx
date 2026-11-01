@@ -14,6 +14,7 @@ import {
   Sparkles,
   Users
 } from 'lucide-react';
+import saasHeroImg from '../assets/images/demo_saas_dashboard_abstract_1793552555356.jpg';
 
 export const SaaSDemo: React.FC = () => {
   // Workflow Simulator State
@@ -185,7 +186,7 @@ export const SaaSDemo: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="rounded-xl overflow-hidden border border-[#1E293B] shadow-2xl aspect-4/3 relative bg-[#0F172A]">
               <img
-                src="/src/assets/images/demo_saas_dashboard_abstract_1793552555356.jpg"
+                src={saasHeroImg}
                 alt="PulseFlow visual automation architecture"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

@@ -1,4 +1,9 @@
 import { DemoProject } from '../types';
+import coffeeHero from '../assets/images/demo_coffee_roastery_1793552553944.jpg';
+import dentalHero from '../assets/images/demo_dental_clinic_1793552553382.jpg';
+import architectureHero from '../assets/images/demo_architecture_villa_1793552554911.jpg';
+import saasHero from '../assets/images/demo_saas_dashboard_abstract_1793552555356.jpg';
+import legalHero from '../assets/images/agency_hero_workspace_1793552555373.jpg';
 
 export const DEMO_PROJECTS: DemoProject[] = [
   {
@@ -9,7 +14,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     tagline: 'Single-origin small-batch roastery with online bean ordering & table reservations',
     description: 'A warm, inviting digital storefront for cafes and roasteries with online coffee bag ordering, a recurring subscription picker, and a table tasting booking system.',
     clientType: 'Cafes, Roasteries, Bakeries, Restaurants, Artisan Food Brands',
-    heroImage: '/src/assets/images/demo_coffee_roastery_1793552553944.jpg',
+    heroImage: coffeeHero,
     startingPrice: '$349',
     turnaroundTime: '5–7 business days',
     conversionFeatures: [
@@ -32,7 +37,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     tagline: 'Premier cosmetic dentistry & aesthetics clinic with instant appointment scheduling',
     description: 'A tranquil, luxury healthcare web experience that eliminates patient anxiety and drives high-value cosmetic consultations through an interactive 4-step treatment booking wizard.',
     clientType: 'Dental Clinics, Plastic Surgeons, Dermatology, Med Spas, Wellness Studios',
-    heroImage: '/src/assets/images/demo_dental_clinic_1793552553382.jpg',
+    heroImage: dentalHero,
     startingPrice: '$499',
     turnaroundTime: '7–10 business days',
     conversionFeatures: [
@@ -55,7 +60,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     tagline: 'Minimalist contemporary architectural atelier showcasing residential & civic projects',
     description: 'An editorial portfolio website built for architects and luxury interior designers. High-impact photography, interactive project blueprints, and a streamlined project brief intake.',
     clientType: 'Architects, Interior Designers, Luxury Home Builders, Landscape Artists',
-    heroImage: '/src/assets/images/demo_architecture_villa_1793552554911.jpg',
+    heroImage: architectureHero,
     startingPrice: '$549',
     turnaroundTime: '7–10 business days',
     conversionFeatures: [
@@ -78,7 +83,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     tagline: 'Enterprise AI workflow automation platform with live interactive pipeline builder',
     description: 'A conversion-engineered SaaS landing page featuring an interactive workflow demo sandbox, dynamic seat pricing calculator, and friction-free free trial onboarding.',
     clientType: 'Tech Startups, B2B SaaS, AI Tools, Developer Platforms, Cloud Infrastructure',
-    heroImage: '/src/assets/images/demo_saas_dashboard_abstract_1793552555356.jpg',
+    heroImage: saasHero,
     startingPrice: '$599',
     turnaroundTime: '8–12 business days',
     conversionFeatures: [
@@ -101,7 +106,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     tagline: 'Boutique corporate legal practice advising on M&A, intellectual property, and venture financings',
     description: 'An authoritative, distinguished digital presence for high-stakes corporate attorneys and executive consultants. Built to convey gravitas, transparency, and client discretion.',
     clientType: 'Law Firms, Private Equity, Family Offices, Executive Financial Consultancies',
-    heroImage: '/src/assets/images/agency_hero_workspace_1793552555373.jpg',
+    heroImage: legalHero,
     startingPrice: '$499',
     turnaroundTime: '7–10 business days',
     conversionFeatures: [
