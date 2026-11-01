@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calculator, CheckCircle2, MonitorPlay, Sparkles, Code2, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Calculator, CheckCircle2, MonitorPlay, Sparkles, Code2, ShieldCheck, Zap, Github } from 'lucide-react';
 import { AGENCY_STATS, DEMO_PROJECTS } from '../data/demoData';
 import { DemoProject } from '../types';
 
@@ -52,7 +52,7 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
             </p>
 
             {/* Primary & Secondary Action Cluster */}
-            <div className="flex flex-wrap items-center gap-4 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 onClick={onExploreDemos}
                 className="bg-neutral-950 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-950 text-white px-7 py-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center gap-2.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95"
@@ -68,6 +68,17 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
                 <Calculator className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
                 <span>Instant Cost Calculator</span>
               </button>
+
+              <a
+                href="https://github.com/orondee/Test-Websites"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white px-4 py-4 rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all flex items-center gap-2 hover:-translate-y-0.5"
+                title="View Source on GitHub (orondee/Test-Websites)"
+              >
+                <Github className="w-4 h-4" />
+                <span className="hidden sm:inline">GitHub</span>
+              </a>
             </div>
 
             {/* Quick Demo Previews Bar */}

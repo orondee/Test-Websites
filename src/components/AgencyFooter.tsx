@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowUp, Sparkles, Sliders } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUp, Sparkles, Sliders, Github } from 'lucide-react';
 
 interface AgencyFooterProps {
   onOpenInquiry: () => void;
@@ -30,7 +30,17 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://github.com/orondee/Test-Websites"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors flex items-center gap-1.5"
+              title="View on GitHub"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub</span>
+            </a>
             <button
               onClick={onOpenAccessibility}
               className="p-2.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5"
@@ -114,7 +124,17 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
 
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500">
           <div>© 2026 Oronde Web Studio. Hand-crafted with React &amp; Vite.</div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <a 
+              href="https://github.com/orondee/Test-Websites" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-white transition-colors flex items-center gap-1.5"
+            >
+              <Github className="w-3.5 h-3.5" />
+              <span>orondee/Test-Websites</span>
+            </a>
+            <span>·</span>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
             <span>·</span>
             <span>Direct Client Privacy</span>

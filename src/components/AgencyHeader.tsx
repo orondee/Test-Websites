@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sun, Moon, Sliders, Menu, X, Sparkles } from 'lucide-react';
+import { ArrowRight, Sun, Moon, Sliders, Menu, X, Sparkles, Github } from 'lucide-react';
 
 interface AgencyHeaderProps {
   onOpenInquiry: () => void;
@@ -56,6 +56,18 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
 
         {/* Zone 3: Accessibility + Dark/Light Theme + CTA */}
         <div className="flex items-center gap-2 shrink-0">
+          {/* GitHub Repository Link */}
+          <a
+            href="https://github.com/orondee/Test-Websites"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors flex items-center justify-center"
+            title="View GitHub Repository (orondee/Test-Websites)"
+            aria-label="View source code on GitHub"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+
           {/* Quick Accessibility Button */}
           <button
             onClick={onOpenAccessibility}
@@ -145,6 +157,15 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               className="py-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
               Frequently Asked Questions
+            </a>
+            <a
+              href="https://github.com/orondee/Test-Websites"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-1 flex items-center gap-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub Repository (Source Code)</span>
             </a>
           </nav>
 
