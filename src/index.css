@@ -3,8 +3,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  :root {
+    --app-font-scale: 100%;
+  }
+
+  html {
+    font-size: var(--app-font-scale);
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   h1, h2, h3, h4, .font-display {
@@ -14,6 +24,39 @@
   .font-serif-luxury {
     font-family: 'Playfair Display', Georgia, serif;
   }
+}
+
+/* Accessibility Modes */
+.accessibility-dyslexic {
+  font-family: 'Comic Sans MS', 'OpenDyslexic', 'Trebuchet MS', sans-serif !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+  line-height: 1.8 !important;
+}
+
+.accessibility-high-contrast {
+  filter: contrast(125%);
+}
+
+.accessibility-high-contrast * {
+  border-color: currentColor !important;
+}
+
+.accessibility-reduced-motion *,
+.accessibility-reduced-motion *::before,
+.accessibility-reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* Smooth micro-interactions */
+.smooth-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-2px);
 }
 
 /* Custom subtle scrollbars */

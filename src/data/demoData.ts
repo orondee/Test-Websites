@@ -6,22 +6,22 @@ export const DEMO_PROJECTS: DemoProject[] = [
     name: 'Brew & Origin Roasters',
     industry: 'hospitality',
     industryLabel: 'Artisan Cafe & E-Commerce',
-    tagline: 'Single-origin small-batch roastery with online bean subscriptions & cafe reservations',
-    description: 'Designed to elevate a local coffee shop into a high-margin direct-to-consumer brand with instant mobile order pickup, recurring subscription club, and tasting room booking.',
+    tagline: 'Single-origin small-batch roastery with online bean ordering & table reservations',
+    description: 'A warm, inviting digital storefront for cafes and roasteries with online coffee bag ordering, a recurring subscription picker, and a table tasting booking system.',
     clientType: 'Cafes, Roasteries, Bakeries, Restaurants, Artisan Food Brands',
     heroImage: '/src/assets/images/demo_coffee_roastery_1793552553944.jpg',
-    startingPrice: '$2,400',
-    turnaroundTime: '10 business days',
+    startingPrice: '$349',
+    turnaroundTime: '5–7 business days',
     conversionFeatures: [
-      '1-Click Direct Bean Bag Purchasing',
-      'Recurring Monthly Coffee Subscription Selector',
-      'Table & Cupping Session Booking System',
-      'Mobile-First Cart Drawer with Upsells'
+      'Interactive Bean Roast & Flavor Filter',
+      'Direct Bag Purchasing with Cart Drawer',
+      'Table & Tasting Session Reservation Form',
+      'Mobile-Optimized Menu with Clean Pricing'
     ],
-    techStack: ['React', 'Cart State Engine', 'Stripe Ready', 'Tailwind CSS'],
-    resultsStat: {
-      value: '+215%',
-      label: 'Online bean re-orders within 60 days'
+    techStack: ['React', 'Cart Drawer', 'Stripe Ready', 'Tailwind CSS'],
+    guarantee: {
+      title: 'Direct Client Ordering',
+      subtitle: 'Built for local pickup and online recurring bean orders'
     }
   },
   {
@@ -33,18 +33,18 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'A tranquil, luxury healthcare web experience that eliminates patient anxiety and drives high-value cosmetic consultations through an interactive 4-step treatment booking wizard.',
     clientType: 'Dental Clinics, Plastic Surgeons, Dermatology, Med Spas, Wellness Studios',
     heroImage: '/src/assets/images/demo_dental_clinic_1793552553382.jpg',
-    startingPrice: '$3,200',
-    turnaroundTime: '14 business days',
+    startingPrice: '$499',
+    turnaroundTime: '7–10 business days',
     conversionFeatures: [
       '4-Step Real-Time Consultation Booking Wizard',
-      'Interactive Smile Transformation Before/After Viewer',
-      'Transparent Treatment Pricing & Insurance Guide',
-      'Specialist Doctor Credential Bios & Patient Reviews'
+      'Interactive Smile Transformation Before/After Slider',
+      'Transparent Treatment Pricing & Financing Guide',
+      'Specialist Doctor Credential Bios'
     ],
-    techStack: ['Appointment Engine', 'HIPAA Ready UX', 'React', 'Tailwind CSS'],
-    resultsStat: {
-      value: '+340%',
-      label: 'Qualified cosmetic consultation inquiries'
+    techStack: ['Appointment Wizard', 'HIPAA Friendly', 'React', 'Tailwind CSS'],
+    guarantee: {
+      title: 'Automated Booking Flow',
+      subtitle: 'Captures patient inquiries 24/7 without phone tag'
     }
   },
   {
@@ -56,18 +56,18 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'An editorial portfolio website built for architects and luxury interior designers. High-impact photography, interactive project blueprints, and a streamlined project brief intake.',
     clientType: 'Architects, Interior Designers, Luxury Home Builders, Landscape Artists',
     heroImage: '/src/assets/images/demo_architecture_villa_1793552554911.jpg',
-    startingPrice: '$3,800',
-    turnaroundTime: '14 business days',
+    startingPrice: '$549',
+    turnaroundTime: '7–10 business days',
     conversionFeatures: [
       'Filterable Architectural Portfolio by Typology',
       'Interactive Project Specification & Material Palette Modal',
       'High-Resolution Photography Showcase Grid',
       'Client RFP & Architectural Commission Brief Form'
     ],
-    techStack: ['Masonry Grid', 'Modal Spec Drawer', 'Fast Image Preloading', 'Tailwind CSS'],
-    resultsStat: {
-      value: '$4.2M',
-      label: 'In new client build contracts originated'
+    techStack: ['Masonry Grid', 'Modal Spec Drawer', 'Fast Preloading', 'Tailwind CSS'],
+    guarantee: {
+      title: 'Editorial Visual Presence',
+      subtitle: 'Designed to elevate your brand prestige for high-ticket clients'
     }
   },
   {
@@ -79,8 +79,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'A conversion-engineered SaaS landing page featuring an interactive workflow demo sandbox, dynamic seat pricing calculator, and friction-free free trial onboarding.',
     clientType: 'Tech Startups, B2B SaaS, AI Tools, Developer Platforms, Cloud Infrastructure',
     heroImage: '/src/assets/images/demo_saas_dashboard_abstract_1793552555356.jpg',
-    startingPrice: '$4,500',
-    turnaroundTime: '18 business days',
+    startingPrice: '$599',
+    turnaroundTime: '8–12 business days',
     conversionFeatures: [
       'Interactive Visual Pipeline Demo (Try Before Signup)',
       'Dynamic ROI & Seat Tier Pricing Calculator',
@@ -88,9 +88,9 @@ export const DEMO_PROJECTS: DemoProject[] = [
       'Frictionless 14-Day Trial Lead Capture Modal'
     ],
     techStack: ['Interactive State Nodes', 'Pricing Engine', 'React', 'Tailwind CSS'],
-    resultsStat: {
-      value: '18.4%',
-      label: 'Visitor-to-trial conversion rate'
+    guarantee: {
+      title: 'Interactive Product Demo',
+      subtitle: 'Allows visitors to test your software before signing up'
     }
   },
   {
@@ -102,76 +102,76 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'An authoritative, distinguished digital presence for high-stakes corporate attorneys and executive consultants. Built to convey gravitas, transparency, and client discretion.',
     clientType: 'Law Firms, Private Equity, Family Offices, Executive Financial Consultancies',
     heroImage: '/src/assets/images/agency_hero_workspace_1793552555373.jpg',
-    startingPrice: '$3,600',
-    turnaroundTime: '12 business days',
+    startingPrice: '$499',
+    turnaroundTime: '7–10 business days',
     conversionFeatures: [
       'Structured Practice Areas Matrix with Deal Examples',
       'Partner Directory with Direct Consultation Booking',
       'Confidential Case & Transaction Evaluation Intake',
-      'Landmark Deal Tracker with Verified Volume'
+      'Clear Credentials and Practice Disciplines'
     ],
     techStack: ['Secure Intake Form', 'Attorney Roster', 'React', 'Tailwind CSS'],
-    resultsStat: {
-      value: '+180%',
-      label: 'Direct corporate retained client inquiries'
+    guarantee: {
+      title: 'Executive Trust & Confidentiality',
+      subtitle: 'Conveys prestige and captures private prospective clients'
     }
   }
 ];
 
 export const AGENCY_STATS = [
-  { value: '100%', label: 'Mobile Google PageSpeed Score' },
-  { value: '10–14 Days', label: 'Average Turnaround to Live Launch' },
-  { value: '3.8x', label: 'Average Inbound Conversion Lift' },
-  { value: '0 Maintenance Stress', label: 'Hosting, SSL & Security Handled' }
+  { value: 'From $299', label: 'Affordable Starter Launch Pricing' },
+  { value: '7–10 Days', label: 'Average Time to Live Website' },
+  { value: '100% Owned', label: 'No Monthly Page-Builder Lock-In' },
+  { value: '30 Days Care', label: 'Free Post-Launch Support & Revisions' }
 ];
 
 export const AGENCY_PACKAGES = [
   {
     id: 'starter',
-    name: 'Starter Business Presence',
-    price: '$1,850',
-    turnaround: '5–7 business days',
+    name: 'Starter Business Launch',
+    price: '$299',
+    turnaround: '3–5 business days',
     popular: false,
-    description: 'Perfect for local service providers, freelancers, and small businesses needing an immediate high-trust web presence that captures leads.',
+    description: 'Designed for small businesses, freelancers, and local services who need a professional, trustworthy presence without overspending.',
     deliverables: [
-      'Up to 5 bespoke custom responsive pages',
-      'Mobile-first responsive design (iPhone & Android)',
-      'High-converting lead capture inquiry form',
-      'Basic On-Page SEO setup & Google indexing',
-      '1 year included ultra-fast hosting setup',
-      '30 days post-launch support & updates'
+      'Up to 4 custom responsive pages (Home, About, Services, Contact)',
+      'Mobile-first responsive design for iPhone & Android',
+      'Direct customer lead inquiry form',
+      'Google Maps & contact click-to-call integration',
+      'Google Search basic SEO & indexing setup',
+      '30 days of free edits and support after launch'
     ]
   },
   {
     id: 'growth',
-    name: 'Growth & High-Conversion Suite',
-    price: '$3,400',
-    turnaround: '10–14 business days',
+    name: 'Growth & Booking Suite',
+    price: '$549',
+    turnaround: '7–10 business days',
     popular: true,
-    description: 'Our most requested package. Engineered for established businesses and practices that want to generate consistent, qualified paying customers.',
+    description: 'Our most popular package. Built for businesses that want interactive appointment booking, product sales, or dynamic service calculators.',
     deliverables: [
-      'Up to 10 custom designed & coded pages',
-      'Interactive features (Booking wizard or E-commerce catalog)',
-      'Advanced On-Page & Technical SEO architecture',
-      'CRM & Email automation webhook integration',
-      'Custom micro-interactions & speed optimization (95+ score)',
-      '60 days post-launch priority support'
+      'Up to 8 custom designed & coded pages',
+      'Interactive booking calendar or online product store',
+      'Custom animations and smooth responsive micro-interactions',
+      'Domain connection & SSL security certificate',
+      'Enhanced Google SEO & local search optimization',
+      '30 days of free revisions & developer support'
     ]
   },
   {
     id: 'enterprise',
-    name: 'Bespoke Custom Platform',
-    price: '$5,800',
-    turnaround: '18–21 business days',
+    name: 'Full Custom Platform',
+    price: '$899',
+    turnaround: '10–14 business days',
     popular: false,
-    description: 'For ambitious brands, SaaS startups, and high-ticket service firms requiring a distinct, competitive edge with custom application workflows.',
+    description: 'For businesses needing a unique digital application with custom calculators, multi-step wizards, or extensive content management.',
     deliverables: [
-      'Unlimited custom layout pages & application routes',
-      'Complex interactive calculators, filters, or portals',
-      'Payment gateway / Stripe billing integration',
-      'Full brand design system & custom iconography',
-      'Comprehensive conversion rate optimization (CRO)',
-      'Dedicated Slack channel & 6 months ongoing care'
+      'Up to 12 custom pages & specialized interactive tools',
+      'Custom pricing calculators, product builders, or intake wizards',
+      'Stripe payments / checkout integration',
+      'Comprehensive speed optimization (loads in under 1.5 seconds)',
+      'Full source code handover & deployment guide',
+      '60 days of priority post-launch support'
     ]
   }
 ];

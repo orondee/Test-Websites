@@ -168,16 +168,16 @@ export const SaaSDemo: React.FC = () => {
 
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-[#1E293B]">
               <div>
-                <div className="font-mono text-2xl font-bold text-white">42ms</div>
-                <div className="text-xs text-[#94A3B8] mt-0.5">Average Pipeline Latency</div>
+                <div className="font-mono text-xl font-bold text-white">&lt;50ms</div>
+                <div className="text-xs text-[#94A3B8] mt-0.5">Pipeline Latency</div>
               </div>
               <div>
-                <div className="font-mono text-2xl font-bold text-white">1.8B+</div>
-                <div className="text-xs text-[#94A3B8] mt-0.5">Monthly Events Processed</div>
+                <div className="font-mono text-xl font-bold text-white">Zero-Code</div>
+                <div className="text-xs text-[#94A3B8] mt-0.5">Webhook Connections</div>
               </div>
               <div>
-                <div className="font-mono text-2xl font-bold text-white">99.99%</div>
-                <div className="text-xs text-[#94A3B8] mt-0.5">Historical Uptime SLA</div>
+                <div className="font-mono text-xl font-bold text-white">99.9%</div>
+                <div className="text-xs text-[#94A3B8] mt-0.5">Target Availability SLA</div>
               </div>
             </div>
           </div>

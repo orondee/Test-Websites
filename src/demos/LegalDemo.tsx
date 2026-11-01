@@ -187,15 +187,15 @@ export const LegalDemo: React.FC = () => {
 
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-[#1E293B]">
               <div>
-                <div className="font-serif-luxury text-2xl text-white">$18B+</div>
-                <div className="text-xs text-[#94A3B8] mt-0.5">Aggregate M&A Value Advised</div>
+                <div className="font-serif-luxury text-xl text-white">Cross-Border</div>
+                <div className="text-xs text-[#94A3B8] mt-0.5">Corporate M&amp;A Advisory</div>
               </div>
               <div>
-                <div className="font-serif-luxury text-2xl text-white">Tier 1</div>
-                <div className="text-xs text-[#94A3B8] mt-0.5">Chambers USA Ranking</div>
+                <div className="font-serif-luxury text-xl text-white">Advisory</div>
+                <div className="text-xs text-[#94A3B8] mt-0.5">Venture &amp; Private Capital</div>
               </div>
               <div>
-                <div className="font-serif-luxury text-2xl text-white">100%</div>
+                <div className="font-serif-luxury text-xl text-white">100%</div>
                 <div className="text-xs text-[#94A3B8] mt-0.5">Partner-Led Representation</div>
               </div>
             </div>

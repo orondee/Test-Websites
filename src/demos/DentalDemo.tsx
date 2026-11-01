@@ -190,16 +190,16 @@ export const DentalDemo: React.FC = () => {
 
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-[#E6E1D8]">
               <div>
-                <div className="font-serif-luxury text-2xl font-bold text-[#1E262B]">2,400+</div>
-                <div className="text-xs text-[#718087] mt-0.5">Smiles Transformed</div>
+                <div className="font-serif-luxury text-xl font-bold text-[#1E262B]">3D Digital</div>
+                <div className="text-xs text-[#718087] mt-0.5">iTero® Optical Scanning</div>
               </div>
               <div>
-                <div className="font-serif-luxury text-2xl font-bold text-[#1E262B]">15 Years</div>
-                <div className="text-xs text-[#718087] mt-0.5">Porcelain Veneer Warranty</div>
+                <div className="font-serif-luxury text-xl font-bold text-[#1E262B]">Custom Made</div>
+                <div className="text-xs text-[#718087] mt-0.5">Hand-Layered Ceramics</div>
               </div>
               <div>
-                <div className="font-serif-luxury text-2xl font-bold text-[#1E262B]">5.0 ★</div>
-                <div className="text-xs text-[#718087] mt-0.5">380+ Verified Reviews</div>
+                <div className="font-serif-luxury text-xl font-bold text-[#1E262B]">0% APR</div>
+                <div className="text-xs text-[#718087] mt-0.5">Flexible Patient Financing</div>
               </div>
             </div>
           </div>

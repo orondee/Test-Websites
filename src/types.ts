@@ -19,13 +19,20 @@ export interface DemoProject {
   turnaroundTime: string;
   conversionFeatures: string[];
   techStack: string[];
-  resultsStat: {
-    label: string;
-    value: string;
+  guarantee: {
+    title: string;
+    subtitle: string;
   };
 }
 
 export type ViewportMode = 'desktop' | 'tablet' | 'mobile' | 'fullscreen';
+
+export interface AccessibilitySettings {
+  textScale: 'normal' | 'large' | 'xlarge';
+  highContrast: boolean;
+  reducedMotion: boolean;
+  dyslexicFont: boolean;
+}
 
 export interface CalculatorState {
   websiteType: 'starter' | 'business' | 'ecommerce' | 'saas' | 'bespoke';

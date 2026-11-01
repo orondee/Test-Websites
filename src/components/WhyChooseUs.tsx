@@ -1,58 +1,58 @@
 import React from 'react';
-import { Check, X, Zap, Shield, Sparkles, TrendingUp } from 'lucide-react';
+import { Check, X, Zap, Shield, Sparkles, UserCheck } from 'lucide-react';
 
 export const WhyChooseUs: React.FC = () => {
   return (
-    <section id="why-us" className="py-20 bg-neutral-900 text-white border-b border-neutral-800">
+    <section id="why-us" className="py-20 bg-neutral-900 dark:bg-black text-white border-b border-neutral-800 transition-colors">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <div className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-            Engineered For Commercial Superiority
+            Why Work With An Independent Developer
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Custom Code vs. Bloated Templates
+            Direct Personal Service vs. Bloated Agencies & Builders
           </h2>
           <p className="text-sm text-neutral-400">
-            Most businesses lose 40% of their mobile visitors before the page even loads. Here is why our bespoke architecture delivers 3x higher conversion.
+            When you hire Oronde Web Studio, you speak directly with the developer who codes your website. No account managers, no 3-month waitlists, and no monthly builder lock-in.
           </p>
         </div>
 
         {/* Comparison Table */}
         <div className="bg-neutral-950 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
-            {/* Left: Oronde Studio */}
-            <div className="md:col-span-6 p-6 sm:p-8 space-y-6 bg-neutral-900/40">
+            {/* Left: Oronde Web Studio */}
+            <div className="md:col-span-6 p-6 sm:p-8 space-y-6 bg-neutral-900/50">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">
-                    The Modern Standard
+                    The Modern Independent Approach
                   </div>
                   <h3 className="font-display text-xl font-bold text-white mt-1">
-                    Bespoke Code by Oronde Studio
+                    Oronde Web Studio
                   </h3>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                  <Zap className="w-5 h-5" />
+                  <UserCheck className="w-5 h-5" />
                 </div>
               </div>
 
               <div className="space-y-4">
                 {[
                   {
-                    title: '98–100 Mobile Google PageSpeed',
-                    desc: 'Under 1.2s total load time. Ranked higher automatically by Google search algorithms.'
+                    title: 'Fair, Affordable Starter Rates (From $299)',
+                    desc: 'High-quality web engineering accessible to local businesses and new ventures.'
                   },
                   {
-                    title: 'Engineered For Direct Commercial Actions',
-                    desc: 'Custom multi-step booking wizards, direct payment links, and frictionless form flows.'
+                    title: 'Direct 1-on-1 Communication',
+                    desc: 'Text, email, or call me directly. Your feedback is implemented immediately.'
                   },
                   {
-                    title: 'Zero Plugin Maintenance Headaches',
-                    desc: 'No database crashes, no security exploits, no weekly broken plugin updates.'
+                    title: 'Fast 7-Day Launch',
+                    desc: 'Clear scope and focused sprints so you can begin taking client inquiries next week.'
                   },
                   {
-                    title: '100% Code Ownership',
-                    desc: 'You own every line of code and visual asset. No monthly page-builder subscriptions.'
+                    title: '100% Code & File Ownership',
+                    desc: 'No monthly proprietary platform fees. You own all code, assets, and design files.'
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
@@ -68,15 +68,15 @@ export const WhyChooseUs: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Traditional Generic WordPress / Wix */}
+            {/* Right: Traditional Big Agencies & DIY Builders */}
             <div className="md:col-span-6 p-6 sm:p-8 space-y-6 bg-neutral-950/80">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-xs font-mono uppercase tracking-wider text-rose-400 font-bold">
-                    The Outdated Legacy
+                    Traditional Agencies & DIY Builders
                   </div>
                   <h3 className="font-display text-xl font-bold text-neutral-300 mt-1">
-                    WordPress / Wix / Elementor Templates
+                    Expensive Agencies / Clunky Templates
                   </h3>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
@@ -87,20 +87,20 @@ export const WhyChooseUs: React.FC = () => {
               <div className="space-y-4">
                 {[
                   {
-                    title: '35–55 Mobile PageSpeed Scores',
-                    desc: 'Heavy 4MB bundle sizes with 30+ redundant plugins causing 5s+ load abandonment.'
+                    title: '$3,000 – $10,000+ Bloated Agency Retainers',
+                    desc: 'Large markups to pay for agency offices, sales reps, and layers of account managers.'
                   },
                   {
-                    title: 'Rigid Cookie-Cutter Templates',
-                    desc: 'Looks identical to thousands of competitors; difficult to customize without breaking.'
+                    title: '6 to 12 Week Bureaucratic Timelines',
+                    desc: 'Endless status meetings and approval committees that delay your business launch.'
                   },
                   {
-                    title: 'Frequent Exploits & Vulnerabilities',
-                    desc: 'Constant target for bot spam, outdated PHP scripts, and sudden layout breaking.'
+                    title: 'Brittle WordPress Plugin Breakages',
+                    desc: 'Outdated plugins and security patches frequently break layout and forms.'
                   },
                   {
-                    title: 'Hostage Recurring Builder Fees',
-                    desc: 'Locked into expensive proprietary ecosystems with painful migration hurdles.'
+                    title: 'Hostage Monthly Subscription Lock-In',
+                    desc: 'If you stop paying their expensive monthly fee, your website disappears.'
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 opacity-80">
