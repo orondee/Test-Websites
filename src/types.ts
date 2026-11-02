@@ -4,7 +4,10 @@ export type BusinessIndustry =
   | 'healthcare'
   | 'creative'
   | 'saas'
-  | 'legal';
+  | 'legal'
+  | 'realestate'
+  | 'fitness'
+  | 'trades';
 
 export interface DemoProject {
   id: string;

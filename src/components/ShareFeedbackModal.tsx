@@ -91,7 +91,7 @@ export const ShareFeedbackButton: React.FC = () => {
                     Feedback Received!
                   </h3>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 max-w-[260px] mx-auto">
-                    Thank you for helping us improve Oronde Web Studio. Your notes go directly to the developer.
+                    Thank you for helping us improve Oronde's Web Studio. Your notes go directly to the developer.
                   </p>
                 </div>
               </div>

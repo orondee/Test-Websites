@@ -20,6 +20,11 @@ import { DentalDemo } from '../demos/DentalDemo';
 import { ArchitectureDemo } from '../demos/ArchitectureDemo';
 import { SaaSDemo } from '../demos/SaaSDemo';
 import { LegalDemo } from '../demos/LegalDemo';
+import { RealEstateDemo } from '../demos/RealEstateDemo';
+import { BakeryDemo } from '../demos/BakeryDemo';
+import { FitnessDemo } from '../demos/FitnessDemo';
+import { WoodworkDemo } from '../demos/WoodworkDemo';
+import { MedSpaDemo } from '../demos/MedSpaDemo';
 
 interface DemoViewerModalProps {
   demo: DemoProject;
@@ -72,6 +77,16 @@ export const DemoViewerModal: React.FC<DemoViewerModalProps> = ({
         return <SaaSDemo />;
       case 'legal-advisory':
         return <LegalDemo />;
+      case 'luxury-realestate':
+        return <RealEstateDemo />;
+      case 'artisan-bakery':
+        return <BakeryDemo />;
+      case 'fitness-studio':
+        return <FitnessDemo />;
+      case 'high-end-trades':
+        return <WoodworkDemo />;
+      case 'med-spa':
+        return <MedSpaDemo />;
       default:
         return <CoffeeDemo />;
     }

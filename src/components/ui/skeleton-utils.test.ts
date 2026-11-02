@@ -7,8 +7,8 @@ import {
   getSkeletonAriaAttributes
 } from './skeleton-utils';
 
-test('getSkeletonCardCount returns default 5 for "all" category', () => {
-  assert.equal(getSkeletonCardCount('all'), 5);
+test('getSkeletonCardCount returns default 10 for "all" category', () => {
+  assert.equal(getSkeletonCardCount('all'), 10);
   assert.equal(getSkeletonCardCount('all', 6), 6);
 });
 

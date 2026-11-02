@@ -120,6 +120,121 @@ export const DEMO_PROJECTS: DemoProject[] = [
       title: 'Executive Trust & Confidentiality',
       subtitle: 'Conveys prestige and captures private prospective clients'
     }
+  },
+  {
+    id: 'luxury-realestate',
+    name: 'Kensington & Co. Estates',
+    industry: 'realestate',
+    industryLabel: 'Private Estates & Luxury Realty',
+    tagline: 'Curated architectural listings and private residences with confidential walk-through booking',
+    description: 'An ultra-refined digital showroom for high-net-worth real estate brokerages and architectural developments. Includes filterable neighborhood portfolios, interactive floor plans, and VIP private showing scheduling.',
+    clientType: 'Luxury Realtors, Architectural Developers, Estate Brokerages, Private Landlords',
+    heroImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
+    startingPrice: '$299',
+    turnaroundTime: '5–7 business days',
+    conversionFeatures: [
+      'Filterable Luxury Listing Gallery by Neighborhood',
+      'Confidential Private Showing Booking Modal',
+      'Property Spec Matrix (Beds, Baths, Sq Ft, Pricing)',
+      'High-Resolution Fullscreen Architectural Gallery'
+    ],
+    techStack: ['Showing Scheduler', 'Gallery Lightbox', 'React', 'Tailwind CSS'],
+    guarantee: {
+      title: 'VIP Buyer Conversion',
+      subtitle: 'Captures qualified private showing requests with date/time selection'
+    }
+  },
+  {
+    id: 'artisan-bakery',
+    name: 'Céleste Pâtisserie & Boulangerie',
+    industry: 'hospitality',
+    industryLabel: 'Artisan Bakery & Custom Cakes',
+    tagline: 'Traditional French viennoiserie with morning pastry pre-orders and bespoke tiered cake customizer',
+    description: 'An elegant French bakery storefront allowing customers to pre-order fresh morning viennoiserie to prevent sell-outs, plus an interactive 3D tier and flavor configurator for custom wedding and celebration cakes.',
+    clientType: 'Artisan Bakeries, Patisseries, Custom Cake Designers, Boutique Chocolatiers',
+    heroImage: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80',
+    startingPrice: '$189',
+    turnaroundTime: '4–6 business days',
+    conversionFeatures: [
+      'Real-Time Pastry Pre-Order Bag with Counter Pickup',
+      'Interactive Custom Cake Tier, Sponge & Filling Customizer',
+      'Live Oven Batch Schedule Indicator (Next Fresh Bake)',
+      'Custom Inscription Preview Piped in Chocolate'
+    ],
+    techStack: ['Pre-Order Cart Drawer', 'Live Cake Customizer', 'React', 'Tailwind CSS'],
+    guarantee: {
+      title: 'Zero Morning Inventory Waste',
+      subtitle: 'Drives prepaid morning pickups before the counter opens'
+    }
+  },
+  {
+    id: 'fitness-studio',
+    name: 'Forma Athletic & Pilates Club',
+    industry: 'fitness',
+    industryLabel: 'Boutique Reformer Pilates & Strength',
+    tagline: 'High-end reformer pilates and strength sanctuary with real-time class spots and instant pass checkout',
+    description: 'A sleek, performance-driven web app for boutique fitness studios. Replaces slow third-party booking tools with native high-speed class booking, remaining spot countdowns, and instant drop-in pass purchases.',
+    clientType: 'Pilates Studios, Strength Gyms, Yoga Shalas, Athletic Clubs, Personal Trainers',
+    heroImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80',
+    startingPrice: '$229',
+    turnaroundTime: '5–7 business days',
+    conversionFeatures: [
+      'Interactive Weekly Class Schedule with Live Spot Countdown',
+      'Filter by Discipline (Reformer, Strength, Recovery)',
+      '1-Click Drop-In Pass Booking Modal ($35 Single Session)',
+      'Coach Credentials & Specialty Discipline Bios'
+    ],
+    techStack: ['Timetable State Engine', 'Live Spot Tracker', 'React', 'Tailwind CSS'],
+    guarantee: {
+      title: 'Frictionless Class Booking',
+      subtitle: 'Fills open reformer machines with zero booking drop-off'
+    }
+  },
+  {
+    id: 'high-end-trades',
+    name: 'Nordic Custom Woodwork & Atelier',
+    industry: 'trades',
+    industryLabel: 'Architectural Millwork & Cabinetry',
+    tagline: 'Bespoke heirloom kitchen cabinetry and architectural woodworking with live linear-footage budget calculator',
+    description: 'A tactile, high-craft digital presence for master woodworkers and cabinetmakers. Features interactive hardwood species swatches, a linear-footage cabinetry cost estimator, and in-home measurement booking.',
+    clientType: 'Custom Cabinetmakers, Millwork Shops, Furniture Craftsmen, High-End Remodelers',
+    heroImage: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+    startingPrice: '$249',
+    turnaroundTime: '4–6 business days',
+    conversionFeatures: [
+      'Interactive Hardwood Species Selector (Walnut, White Oak, Ash)',
+      'Linear-Footage Kitchen Budget Estimator Slider',
+      'Door Profile & Ceiling Height Multipliers',
+      'In-Home Measurement Consultation Request System'
+    ],
+    techStack: ['Cabinetry Estimator', 'Material Swatch Selector', 'React', 'Tailwind CSS'],
+    guarantee: {
+      title: 'Pre-Qualified Project Inquiries',
+      subtitle: 'Filters out low-budget leads with instant pricing clarity'
+    }
+  },
+  {
+    id: 'med-spa',
+    name: 'Lumière Longevity & Medical Aesthetics',
+    industry: 'healthcare',
+    industryLabel: 'Regenerative Longevity & Luxury Med Spa',
+    tagline: 'Physician-formulated NAD+ infusions, cryotherapy, and regenerative aesthetics with treatment matcher',
+    description: 'A serene medical wellness digital experience. Connects prospective patients with targeted longevity therapies through an interactive symptom-and-goal treatment matcher and confidential suite booking.',
+    clientType: 'Med Spas, IV Wellness Lounges, Longevity Clinics, Cryotherapy Centers, Dermatologists',
+    heroImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
+    startingPrice: '$269',
+    turnaroundTime: '5–7 business days',
+    conversionFeatures: [
+      'Interactive Goal Filter (Cellular Longevity, Radiance, Recovery)',
+      'Detailed Therapy Protocol Cards with Duration & Medical Specs',
+      'Confidential Online Suite Booking Form with Date/Time Picker',
+      'Physician Credential & Board Certification Badges'
+    ],
+    techStack: ['Treatment Matcher', 'HIPAA Ready Intake', 'React', 'Tailwind CSS'],
+    guarantee: {
+      title: 'High-Ticket Aesthetic Booking',
+      subtitle: 'Transforms casual visitors into booked medical wellness sessions'
+    }
   }
 ];
 

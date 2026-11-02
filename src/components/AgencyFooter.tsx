@@ -23,7 +23,7 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
               <span className="w-6 h-6 rounded bg-neutral-800 text-white flex items-center justify-center text-[10px] font-mono">
                 OS
               </span>
-              <span>Oronde Web Studio</span>
+              <span>Oronde's Web Studio</span>
             </div>
             <p className="text-xs text-neutral-400 max-w-sm">
               Custom-crafted, high-converting digital storefronts and websites for small businesses and founders starting at $149.
@@ -68,12 +68,17 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <div className="text-white font-bold text-xs uppercase tracking-wider mb-3">
-              Demo Websites
+              10 Demo Websites
             </div>
-            <ul className="space-y-2 text-neutral-400">
+            <ul className="space-y-1.5 text-neutral-400 text-[11px]">
               <li><a href="#demos" className="hover:text-white transition-colors">Artisan Roastery & Cafe ($189)</a></li>
               <li><a href="#demos" className="hover:text-white transition-colors">Aura Aesthetics & Dental ($269)</a></li>
-              <li><a href="#demos" className="hover:text-white transition-colors">Architecture & Interiors ($299)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Kensington Luxury Estates ($299)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Céleste French Pâtisserie ($189)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Forma Pilates & Strength ($229)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Nordic Custom Cabinetry ($249)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Lumière Longevity Med Spa ($269)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Architecture Studio ($299)</a></li>
               <li><a href="#demos" className="hover:text-white transition-colors">PulseFlow SaaS Automation ($329)</a></li>
               <li><a href="#demos" className="hover:text-white transition-colors">Corporate Legal Advisory ($269)</a></li>
             </ul>
@@ -123,7 +128,7 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
         </div>
 
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500">
-          <div>© 2026 Oronde Web Studio. Hand-crafted with React &amp; Vite.</div>
+          <div>© 2026 Oronde's Web Studio. Hand-crafted with React &amp; Vite.</div>
           <div className="flex flex-wrap items-center gap-4">
             <a 
               href="https://github.com/orondee/Test-Websites" 

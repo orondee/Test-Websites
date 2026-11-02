@@ -29,13 +29,13 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
           <span className="w-7 h-7 rounded-lg bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 flex items-center justify-center text-xs font-bold font-mono transition-transform duration-200 group-hover:scale-105 shadow-xs">
             OS
           </span>
-          <span className="tracking-tight">Oronde Web Studio</span>
+          <span className="tracking-tight">Oronde's Web Studio</span>
         </a>
 
         {/* Zone 2: Navigation Links (Desktop) */}
         <nav className="hidden lg:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold text-neutral-600 dark:text-neutral-300">
           <a href="#demos" className="hover:text-neutral-950 dark:hover:text-white transition-colors whitespace-nowrap py-1">
-            5 Demos
+            10 Demos
           </a>
           <a href="#calculator" className="hover:text-neutral-950 dark:hover:text-white transition-colors whitespace-nowrap py-1">
             Cost Calculator
@@ -121,7 +121,7 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               onClick={closeMenu}
               className="py-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
-              5 Live Demo Websites
+              10 Live Demo Websites
             </a>
             <a 
               href="#calculator" 

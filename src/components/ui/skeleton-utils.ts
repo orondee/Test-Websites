@@ -7,7 +7,7 @@ import { BusinessIndustry } from '../../types';
 /**
  * Determines how many skeleton cards to display based on the selected industry filter.
  */
-export function getSkeletonCardCount(industry: BusinessIndustry | string, defaultCount = 5): number {
+export function getSkeletonCardCount(industry: BusinessIndustry | string, defaultCount = 10): number {
   if (industry === 'all') {
     return defaultCount;
   }

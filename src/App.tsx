@@ -193,7 +193,7 @@ export const App: React.FC = () => {
           />
         </FadeInSection>
 
-        {/* 5 Demo Websites Showcase Grid */}
+        {/* 10 Demo Websites Showcase Grid */}
         <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
           <DemoShowcaseSection
             demos={DEMO_PROJECTS}

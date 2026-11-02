@@ -32,13 +32,6 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Hero Column */}
           <div className="lg:col-span-7 space-y-7">
-            {/* Live studio status kicker */}
-            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs text-neutral-700 dark:text-neutral-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-semibold">Independent Web Studio</span>
-              <span className="text-neutral-400 dark:text-neutral-600">·</span>
-              <span className="text-neutral-500 dark:text-neutral-400">Custom Websites From $149</span>
-            </div>
 
             {/* Jaw-Dropping Agency Headline */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.08] text-balance">
@@ -60,7 +53,7 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
                 className="bg-neutral-950 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-950 text-white px-7 py-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center gap-2.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95"
               >
                 <MonitorPlay className="w-4 h-4 text-emerald-400 dark:text-emerald-600" />
-                <span>Test 5 Live Demo Websites</span>
+                <span>Explore 10 Live Demo Websites</span>
               </button>
 
               <button
@@ -125,7 +118,7 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
             <div className="relative rounded-2xl overflow-hidden border border-neutral-200/90 dark:border-neutral-800 shadow-2xl aspect-4/3 sm:aspect-16/11 bg-neutral-100 dark:bg-neutral-900 group">
               <Image
                 src={heroWorkspaceImg}
-                alt="Oronde Web Studio editorial web design studio workspace"
+                alt="Oronde's Web Studio editorial web design studio workspace"
                 fill
                 priority
                 className="group-hover:scale-102 transition-transform duration-700 ease-out"

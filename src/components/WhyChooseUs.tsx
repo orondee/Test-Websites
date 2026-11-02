@@ -13,14 +13,14 @@ export const WhyChooseUs: React.FC = () => {
             Direct Personal Service vs. Bloated Agencies & Builders
           </h2>
           <p className="text-sm text-neutral-400">
-            When you hire Oronde Web Studio, you speak directly with the developer who codes your website. No account managers, no 3-month waitlists, and no monthly builder lock-in.
+            When you hire Oronde's Web Studio, you speak directly with the developer who codes your website. No account managers, no 3-month waitlists, and no monthly builder lock-in.
           </p>
         </div>
 
         {/* Comparison Table */}
         <div className="bg-neutral-950 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
-            {/* Left: Oronde Web Studio */}
+            {/* Left: Oronde's Web Studio */}
             <div className="md:col-span-6 p-6 sm:p-8 space-y-6 bg-neutral-900/50">
               <div className="flex items-center justify-between">
                 <div>
@@ -28,7 +28,7 @@ export const WhyChooseUs: React.FC = () => {
                     The Modern Independent Approach
                   </div>
                   <h3 className="font-display text-xl font-bold text-white mt-1">
-                    Oronde Web Studio
+                    Oronde's Web Studio
                   </h3>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">

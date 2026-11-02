@@ -1,6 +1,6 @@
 {
-  "name": "Oronde Studio - Web Design Agency & Demo Showcase",
-  "description": "High-converting bespoke web design studio portfolio featuring 5 production-grade demo websites for Coffee & Roastery, Dental Aesthetics, Architecture Studio, B2B SaaS, and Corporate Law.",
+  "name": "Oronde's Web Studio - Web Design Agency & Demo Showcase",
+  "description": "High-converting bespoke web design studio portfolio featuring 10 production-grade demo websites for Coffee & Roastery, Dental Aesthetics, Architecture Studio, B2B SaaS, Corporate Law, Luxury Real Estate, French Bakery, Reformer Pilates, Custom Cabinetry, and Medical Spa.",
   "permissions": [],
   "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

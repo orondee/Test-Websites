@@ -83,7 +83,7 @@ export const DemoShowcaseSection: React.FC<DemoShowcaseSectionProps> = ({
               <span>Production-Grade Code</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white">
-              5 Distinctive Industry Demo Websites
+              10 Distinctive Industry Demo Websites
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-xl leading-relaxed">
               Every website below is completely functional—featuring custom carts, multi-step booking calendars, and interactive calculators engineered for conversion.
@@ -94,10 +94,13 @@ export const DemoShowcaseSection: React.FC<DemoShowcaseSectionProps> = ({
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 self-start md:self-end">
             <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-neutral-200/60 dark:bg-neutral-900 rounded-xl border border-neutral-300/40 dark:border-neutral-800">
               {[
-                { id: 'all', label: 'All Projects (5)' },
-                { id: 'hospitality', label: 'Cafe & Store' },
-                { id: 'healthcare', label: 'Dental & Clinic' },
+                { id: 'all', label: `All Projects (${demos.length})` },
+                { id: 'hospitality', label: 'Cafe & Bakery' },
+                { id: 'healthcare', label: 'Dental & Med Spa' },
+                { id: 'realestate', label: 'Real Estate' },
+                { id: 'fitness', label: 'Pilates & Fitness' },
                 { id: 'creative', label: 'Architecture' },
+                { id: 'trades', label: 'Craft & Cabinetry' },
                 { id: 'saas', label: 'B2B SaaS' },
                 { id: 'legal', label: 'Corporate Law' }
               ].map(tab => (
