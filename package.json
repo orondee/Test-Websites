@@ -7,7 +7,7 @@
     "dev": "vite --port 3000 --host 0.0.0.0",
     "build": "tsc && vite build",
     "lint": "tsc --noEmit",
-    "test": "tsx --test src/utils/pricing.test.ts src/components/ui/image-utils.test.ts src/components/ui/skeleton-utils.test.ts",
+    "test": "tsx --test src/utils/pricing.test.ts src/utils/calculator-stepper.test.ts src/utils/scroll-utils.test.ts src/components/ui/image-utils.test.ts src/components/ui/skeleton-utils.test.ts src/utils/toast-manager.test.ts",
     "preview": "vite preview --port 3000"
   },
   "dependencies": {

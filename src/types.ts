@@ -60,3 +60,15 @@ export interface InquiryFormData {
   timeline: string;
   projectBrief: string;
 }
+
+export type ToastType = 'success' | 'error' | 'info' | 'warning';
+
+export interface ToastItem {
+  id: string;
+  title: string;
+  message?: string;
+  type: ToastType;
+  duration?: number;
+  createdAt: number;
+}
+

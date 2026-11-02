@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { DEMO_PROJECTS } from '../data/demoData';
 import { CONTACT_INFO, buildMailtoUrl } from '../data/contact';
+import { useToast } from '../context/ToastContext';
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -47,6 +48,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const [projectBrief, setProjectBrief] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedSuccess, setCopiedSuccess] = useState(false);
+  const { success } = useToast();
 
   useEffect(() => {
     if (initialPackage) setSelectedPackage(initialPackage);
@@ -86,9 +88,18 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    // Automatically trigger mailto link so user's client opens directly
-    window.location.href = mailtoUrl;
+    success(
+      'Message Sent Successfully',
+      `Thank you ${fullName || 'for reaching out'}! Your inquiry details are ready for Oronde Stewart.`
+    );
+    // Trigger mailto link
+    try {
+      window.location.href = mailtoUrl;
+    } catch (err) {
+      // Ignored if protocol handler not configured
+    }
   };
+
 
   const handleCopyDetails = async () => {
     try {

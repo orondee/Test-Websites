@@ -13,7 +13,9 @@ import { DemoViewerModal } from './components/DemoViewerModal';
 import { InquiryModal } from './components/InquiryModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
 import { ShareFeedbackButton } from './components/ShareFeedbackModal';
+import { ScrollToTop } from './components/ScrollToTop';
 import { FadeInSection } from './components/ui/FadeInSection';
+import { ToastProvider } from './context/ToastContext';
 import { DEMO_PROJECTS } from './data/demoData';
 import { DemoProject, AccessibilitySettings } from './types';
 
@@ -200,8 +202,9 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 flex flex-col font-sans selection:bg-neutral-900 dark:selection:bg-white selection:text-white dark:selection:text-neutral-900 transition-colors">
-      {/* Agency Header */}
+    <ToastProvider>
+      <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 flex flex-col font-sans selection:bg-neutral-900 dark:selection:bg-white selection:text-white dark:selection:text-neutral-900 transition-colors">
+        {/* Agency Header */}
       <AgencyHeader
         onOpenInquiry={() => {
           setInquiryPackage('starter');
@@ -328,8 +331,12 @@ export const App: React.FC = () => {
         initialEstimate={inquiryEstimate}
       />
 
+      {/* Floating Scroll to Top Button */}
+      <ScrollToTop forceReducedMotion={a11ySettings.reducedMotion} />
+
       {/* Floating Share Feedback Widget */}
       <ShareFeedbackButton />
     </div>
+  </ToastProvider>
   );
 };
