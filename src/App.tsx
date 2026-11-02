@@ -113,6 +113,36 @@ export const App: React.FC = () => {
     localStorage.setItem('a11y_prefs', JSON.stringify(a11ySettings));
   }, [a11ySettings]);
 
+  // Global Keyboard Shortcuts: Escape (close modals), 'd' (toggle dark), '/' (focus inquiry/search)
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      // If typing in input, textarea, or select, ignore 'd' and '/'
+      const activeEl = document.activeElement;
+      const isInput =
+        activeEl instanceof HTMLInputElement ||
+        activeEl instanceof HTMLTextAreaElement ||
+        activeEl instanceof HTMLSelectElement ||
+        activeEl?.getAttribute('contenteditable') === 'true';
+
+      if (e.key === 'Escape') {
+        if (activeViewerDemo) setActiveViewerDemo(null);
+        if (isInquiryOpen) setIsInquiryOpen(false);
+        if (isA11yOpen) setIsA11yOpen(false);
+      } else if (!isInput) {
+        if (e.key === 'd' || e.key === 'D') {
+          e.preventDefault();
+          toggleTheme();
+        } else if (e.key === '/') {
+          e.preventDefault();
+          setIsInquiryOpen(true);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [activeViewerDemo, isInquiryOpen, isA11yOpen]);
+
   const toggleTheme = () => {
     setIsDark(prev => !prev);
   };

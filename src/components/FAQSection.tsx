@@ -158,17 +158,29 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenInquiry }) => {
               Have a specific question about your project?
             </h3>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
-              No sales pressure. Reach out with your ideas and I'll reply with honest advice and scope options.
+              No sales pressure. Reach out to Oronde Stewart directly at{' '}
+              <a href="mailto:orondestewart1@gmail.com" className="text-emerald-600 dark:text-emerald-400 font-medium underline">
+                orondestewart1@gmail.com
+              </a>{' '}
+              and I'll reply within 4 hours.
             </p>
           </div>
 
-          <button
-            onClick={onOpenInquiry}
-            className="bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 flex items-center gap-2 shadow-xs hover:-translate-y-0.5 active:scale-95"
-          >
-            <span>Ask a Question</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <a
+              href="mailto:orondestewart1@gmail.com"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shadow-xs hover:-translate-y-0.5 active:scale-95 flex items-center gap-2"
+            >
+              <span>Email Oronde</span>
+            </a>
+            <button
+              onClick={onOpenInquiry}
+              className="bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 shadow-xs hover:-translate-y-0.5 active:scale-95"
+            >
+              <span>Project Intake Form</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -8,9 +8,13 @@ import {
   Sparkles,
   Download,
   Building,
-  ShieldCheck
+  ShieldCheck,
+  Mail,
+  Copy,
+  ExternalLink
 } from 'lucide-react';
 import { DEMO_PROJECTS } from '../data/demoData';
+import { CONTACT_INFO, buildMailtoUrl } from '../data/contact';
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -42,6 +46,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const [timeline, setTimeline] = useState('Within 7 days');
   const [projectBrief, setProjectBrief] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [copiedSuccess, setCopiedSuccess] = useState(false);
 
   useEffect(() => {
     if (initialPackage) setSelectedPackage(initialPackage);
@@ -58,9 +63,42 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
 
   if (!isOpen) return null;
 
+  const buildInquirySummary = () => {
+    return (
+      `Hi Oronde,\n\n` +
+      `Here is my project inquiry for Oronde's Web Studio:\n\n` +
+      `• Name: ${fullName || 'Client'}\n` +
+      `• Email: ${email}\n` +
+      `• Company: ${companyName || 'Not specified'}\n` +
+      `• Industry: ${industry}\n` +
+      `• Target Budget: ${budgetRange}\n` +
+      `• Desired Timeline: ${timeline}\n\n` +
+      `Project Brief & Requirements:\n${projectBrief || 'Standard custom website build'}\n\n` +
+      `Looking forward to your reply!\n`
+    );
+  };
+
+  const mailtoUrl = buildMailtoUrl({
+    subject: `New Project Inquiry: ${companyName || fullName || 'Website Build'} (${budgetRange})`,
+    body: buildInquirySummary()
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    // Automatically trigger mailto link so user's client opens directly
+    window.location.href = mailtoUrl;
+  };
+
+  const handleCopyDetails = async () => {
+    try {
+      await navigator.clipboard.writeText(buildInquirySummary());
+      setCopiedSuccess(true);
+      setTimeout(() => setCopiedSuccess(false), 3000);
+    } catch (e) {
+      setCopiedSuccess(true);
+      setTimeout(() => setCopiedSuccess(false), 3000);
+    }
   };
 
   const handleReset = () => {
@@ -74,22 +112,26 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-800 dark:hover:text-white p-1"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {isSubmitted ? (
-          <div className="py-8 text-center space-y-4">
+          <div className="py-6 text-center space-y-4">
             <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 mx-auto flex items-center justify-center">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
             <div className="space-y-1">
               <h3 className="font-display font-bold text-2xl text-neutral-900 dark:text-white">
-                Project Inquiry Received!
+                Project Inquiry Ready to Send!
               </h3>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-md mx-auto">
-                Thank you, <span className="font-semibold text-neutral-900 dark:text-white">{fullName}</span>. I have received your request for <span className="font-semibold text-neutral-900 dark:text-white">{companyName || 'your business'}</span>.
+                Thank you, <span className="font-semibold text-neutral-900 dark:text-white">{fullName}</span>. Your details are pre-formatted for Oronde at{' '}
+                <a href={`mailto:${CONTACT_INFO.email}`} className="text-emerald-600 dark:text-emerald-400 font-semibold underline">
+                  {CONTACT_INFO.email}
+                </a>.
               </p>
             </div>
 
@@ -97,11 +139,11 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
             <div className="bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 rounded-xl p-4 text-left text-xs space-y-2 text-neutral-700 dark:text-neutral-300">
               <div className="flex items-center justify-between pb-2 border-b border-neutral-200 dark:border-neutral-700 font-mono text-[11px] text-neutral-500 dark:text-neutral-400">
                 <span>INQUIRY #{Math.floor(100000 + Math.random() * 900000)}</span>
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold">STATUS: CONFIRMED</span>
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">RECIPIENT: {CONTACT_INFO.email}</span>
               </div>
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <div>
-                  <span className="text-neutral-400 block">Contact Email:</span>
+                  <span className="text-neutral-400 block">Your Contact Email:</span>
                   <span className="font-semibold text-neutral-900 dark:text-white">{email}</span>
                 </div>
                 <div>
@@ -113,32 +155,67 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                   <span className="font-semibold text-neutral-900 dark:text-white">{timeline}</span>
                 </div>
                 <div>
-                  <span className="text-neutral-400 block">Client Guarantee:</span>
-                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">30 Days Free Edits</span>
+                  <span className="text-neutral-400 block">Direct Recipient:</span>
+                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">{CONTACT_INFO.name}</span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+              <a
+                href={mailtoUrl}
+                className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Open in Email App ({CONTACT_INFO.email})</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={handleCopyDetails}
+                className="w-full sm:w-auto border border-neutral-300 dark:border-neutral-700 hover:border-neutral-900 text-neutral-700 dark:text-neutral-300 px-4 py-2.5 rounded-xl text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+              >
+                {copiedSuccess ? (
+                  <>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                    <span className="text-emerald-500">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy Text</span>
+                  </>
+                )}
+              </button>
+
               <button
                 onClick={handleReset}
-                className="w-full sm:w-auto bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white px-6 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors"
+                className="w-full sm:w-auto bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors"
               >
-                Return to Studio
+                Done
               </button>
             </div>
           </div>
         ) : (
           <div>
             <div className="mb-6 space-y-1">
-              <div className="text-xs uppercase font-mono tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
-                Direct Developer Discovery
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase font-mono tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
+                  Direct Developer Discovery
+                </span>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 hover:underline"
+                >
+                  <Mail className="w-3 h-3" />
+                  <span>{CONTACT_INFO.email}</span>
+                </a>
               </div>
               <h3 className="font-display font-bold text-2xl text-neutral-900 dark:text-white">
                 Start Your Website Build
               </h3>
               <p className="text-xs text-neutral-600 dark:text-neutral-400">
-                Tell me about your business goals. I reply within 4 hours with a scope breakdown and kickoff schedule.
+                Tell me about your business goals. I reply within 4 hours with an honest scope breakdown and kickoff schedule.
               </p>
             </div>
 
@@ -205,10 +282,10 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                     onChange={e => setBudgetRange(e.target.value)}
                     className="w-full text-xs px-3 py-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-emerald-500"
                   >
-                    <option>$149 (Starter Business Launch)</option>
-                    <option>$150 – $300 (Growth & Booking Suite)</option>
-                    <option>$300 – $500 (Custom Platform)</option>
-                    <option>$500+ (Specialized Multi-App Suite)</option>
+                    <option>$129 – $199 (Starter Business Launch)</option>
+                    <option>$199 – $299 (Growth & Booking Suite)</option>
+                    <option>$299 – $450 (Custom Platform & Store)</option>
+                    <option>$450+ (Specialized Multi-App Suite)</option>
                   </select>
                 </div>
                 <div>
@@ -239,18 +316,24 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                 />
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 space-y-2">
                 <button
                   type="submit"
-                  className="w-full bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-sm"
                 >
-                  <Send className="w-4 h-4 text-emerald-400 dark:text-emerald-600" />
-                  <span>Send Project Details</span>
+                  <Send className="w-4 h-4 text-emerald-200" />
+                  <span>Send Project Details to Oronde</span>
                 </button>
-              </div>
 
-              <div className="text-[11px] text-center text-neutral-500 dark:text-neutral-400">
-                🔒 Direct personal reply. Zero spam or sales pressure.
+                <div className="flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400 pt-1">
+                  <span>🔒 Direct reply from {CONTACT_INFO.name}</span>
+                  <a
+                    href={`mailto:${CONTACT_INFO.email}`}
+                    className="font-mono text-emerald-600 dark:text-emerald-400 hover:underline"
+                  >
+                    {CONTACT_INFO.email}
+                  </a>
+                </div>
               </div>
             </form>
           </div>

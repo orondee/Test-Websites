@@ -1,5 +1,6 @@
-import React from 'react';
-import { Mail, Phone, MapPin, ArrowUp, Sparkles, Sliders, Github } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, ArrowUp, Sparkles, Sliders, Github, Copy, CheckCircle2 } from 'lucide-react';
+import { CONTACT_INFO } from '../data/contact';
 
 interface AgencyFooterProps {
   onOpenInquiry: () => void;
@@ -10,8 +11,21 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
   onOpenInquiry,
   onOpenAccessibility
 }) => {
+  const [copied, setCopied] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(CONTACT_INFO.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
   };
 
   return (
@@ -26,13 +40,21 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
               <span>Oronde's Web Studio</span>
             </div>
             <p className="text-xs text-neutral-400 max-w-sm">
-              Custom-crafted, high-converting digital storefronts and websites for small businesses and founders starting at $149.
+              Custom-crafted, high-converting digital storefronts and websites for small businesses and founders starting at $129. Direct communication with Oronde Stewart.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="https://github.com/orondee/Test-Websites"
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="p-2.5 rounded-lg bg-neutral-900 border border-neutral-800 text-emerald-400 hover:text-white hover:border-emerald-500/50 transition-colors flex items-center gap-1.5"
+              title={`Email ${CONTACT_INFO.email}`}
+            >
+              <Mail className="w-4 h-4" />
+              <span className="font-mono">{CONTACT_INFO.email}</span>
+            </a>
+            <a
+              href={CONTACT_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors flex items-center gap-1.5"
@@ -53,7 +75,7 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
               onClick={onOpenInquiry}
               className="bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider transition-colors"
             >
-              Start Your Website (From $149)
+              Start Your Website (From $129)
             </button>
             <button
               onClick={scrollToTop}
@@ -101,18 +123,31 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
             <div className="text-white font-bold text-xs uppercase tracking-wider mb-3">
               Direct Contact
             </div>
-            <ul className="space-y-2 text-neutral-400">
-              <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-neutral-500" />
-                <a href="mailto:hello@orondestudio.com" className="hover:text-white">hello@orondestudio.com</a>
+            <ul className="space-y-2.5 text-neutral-400">
+              <li className="flex items-center justify-between gap-2 bg-neutral-900/60 p-2 rounded-lg border border-neutral-800/80">
+                <div className="flex items-center gap-2 overflow-hidden">
+                  <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white font-mono text-emerald-400 font-semibold truncate">
+                    {CONTACT_INFO.email}
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="text-neutral-400 hover:text-white shrink-0 p-1"
+                  title="Copy email to clipboard"
+                  aria-label="Copy email address"
+                >
+                  {copied ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                </button>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-neutral-500" />
-                <span>(212) 555-0198</span>
+                <span>{CONTACT_INFO.phone}</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-neutral-500" />
-                <span>Brooklyn, New York · Remote Worldwide</span>
+                <span>{CONTACT_INFO.location}</span>
               </li>
             </ul>
           </div>
@@ -128,10 +163,10 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
         </div>
 
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500">
-          <div>© 2026 Oronde's Web Studio. Hand-crafted with React &amp; Vite.</div>
+          <div>© 2026 Oronde's Web Studio. Hand-crafted with React &amp; Vite. Contact: <a href={`mailto:${CONTACT_INFO.email}`} className="text-emerald-400 hover:underline">{CONTACT_INFO.email}</a></div>
           <div className="flex flex-wrap items-center gap-4">
             <a 
-              href="https://github.com/orondee/Test-Websites" 
+              href={CONTACT_INFO.github} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-white transition-colors flex items-center gap-1.5"

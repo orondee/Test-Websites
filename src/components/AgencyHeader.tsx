@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sun, Moon, Sliders, Menu, X, Sparkles, Github } from 'lucide-react';
+import { ArrowRight, Sun, Moon, Sliders, Menu, X, Sparkles, Github, Mail } from 'lucide-react';
+import { CONTACT_INFO } from '../data/contact';
 
 interface AgencyHeaderProps {
   onOpenInquiry: () => void;
@@ -33,7 +34,7 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
         </a>
 
         {/* Zone 2: Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold text-neutral-600 dark:text-neutral-300">
+        <nav className="hidden lg:flex items-center gap-7 text-xs uppercase tracking-wider font-semibold text-neutral-600 dark:text-neutral-300">
           <a href="#demos" className="hover:text-neutral-950 dark:hover:text-white transition-colors whitespace-nowrap py-1">
             10 Demos
           </a>
@@ -54,11 +55,21 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
           </a>
         </nav>
 
-        {/* Zone 3: Accessibility + Dark/Light Theme + CTA */}
+        {/* Zone 3: Direct Email + GitHub + Accessibility + Theme + CTA */}
         <div className="flex items-center gap-2 shrink-0">
+          {/* Direct Email Link */}
+          <a
+            href={`mailto:${CONTACT_INFO.email}`}
+            className="p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors flex items-center justify-center"
+            title={`Email Oronde directly (${CONTACT_INFO.email})`}
+            aria-label={`Email Oronde Stewart at ${CONTACT_INFO.email}`}
+          >
+            <Mail className="w-4 h-4" />
+          </a>
+
           {/* GitHub Repository Link */}
           <a
-            href="https://github.com/orondee/Test-Websites"
+            href={CONTACT_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors flex items-center justify-center"
@@ -135,7 +146,7 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               onClick={closeMenu}
               className="py-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
-              Website Packages (From $149)
+              Website Packages (From $129)
             </a>
             <a 
               href="#why-us" 
@@ -159,7 +170,14 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               Frequently Asked Questions
             </a>
             <a
-              href="https://github.com/orondee/Test-Websites"
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="py-1 flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-medium"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Email: {CONTACT_INFO.email}</span>
+            </a>
+            <a
+              href={CONTACT_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
               className="py-1 flex items-center gap-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
@@ -169,7 +187,7 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
             </a>
           </nav>
 
-          <div className="pt-3 border-t border-neutral-200 dark:border-neutral-800">
+          <div className="pt-3 border-t border-neutral-200 dark:border-neutral-800 space-y-2">
             <button
               onClick={() => {
                 closeMenu();
@@ -177,9 +195,16 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               }}
               className="w-full py-2.5 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 text-xs uppercase tracking-wider font-semibold rounded-lg flex items-center justify-center gap-2 shadow-sm"
             >
-              <span>Start Your Website Build (From $149)</span>
+              <span>Start Your Website Build (From $129)</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="w-full py-2 bg-emerald-600 text-white text-xs uppercase tracking-wider font-semibold rounded-lg flex items-center justify-center gap-2 shadow-sm text-center"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Email Oronde Directly</span>
+            </a>
           </div>
         </div>
       )}
