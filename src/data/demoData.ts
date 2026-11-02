@@ -15,8 +15,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'A warm, inviting digital storefront for cafes and roasteries with online coffee bag ordering, a recurring subscription picker, and a table tasting booking system.',
     clientType: 'Cafes, Roasteries, Bakeries, Restaurants, Artisan Food Brands',
     heroImage: coffeeHero,
-    startingPrice: '$349',
-    turnaroundTime: '5–7 business days',
+    startingPrice: '$189',
+    turnaroundTime: '4–6 business days',
     conversionFeatures: [
       'Interactive Bean Roast & Flavor Filter',
       'Direct Bag Purchasing with Cart Drawer',
@@ -38,8 +38,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'A tranquil, luxury healthcare web experience that eliminates patient anxiety and drives high-value cosmetic consultations through an interactive 4-step treatment booking wizard.',
     clientType: 'Dental Clinics, Plastic Surgeons, Dermatology, Med Spas, Wellness Studios',
     heroImage: dentalHero,
-    startingPrice: '$499',
-    turnaroundTime: '7–10 business days',
+    startingPrice: '$269',
+    turnaroundTime: '5–7 business days',
     conversionFeatures: [
       '4-Step Real-Time Consultation Booking Wizard',
       'Interactive Smile Transformation Before/After Slider',
@@ -61,8 +61,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'An editorial portfolio website built for architects and luxury interior designers. High-impact photography, interactive project blueprints, and a streamlined project brief intake.',
     clientType: 'Architects, Interior Designers, Luxury Home Builders, Landscape Artists',
     heroImage: architectureHero,
-    startingPrice: '$549',
-    turnaroundTime: '7–10 business days',
+    startingPrice: '$299',
+    turnaroundTime: '6–8 business days',
     conversionFeatures: [
       'Filterable Architectural Portfolio by Typology',
       'Interactive Project Specification & Material Palette Modal',
@@ -84,8 +84,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'A conversion-engineered SaaS landing page featuring an interactive workflow demo sandbox, dynamic seat pricing calculator, and friction-free free trial onboarding.',
     clientType: 'Tech Startups, B2B SaaS, AI Tools, Developer Platforms, Cloud Infrastructure',
     heroImage: saasHero,
-    startingPrice: '$599',
-    turnaroundTime: '8–12 business days',
+    startingPrice: '$329',
+    turnaroundTime: '7–10 business days',
     conversionFeatures: [
       'Interactive Visual Pipeline Demo (Try Before Signup)',
       'Dynamic ROI & Seat Tier Pricing Calculator',
@@ -107,8 +107,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
     description: 'An authoritative, distinguished digital presence for high-stakes corporate attorneys and executive consultants. Built to convey gravitas, transparency, and client discretion.',
     clientType: 'Law Firms, Private Equity, Family Offices, Executive Financial Consultancies',
     heroImage: legalHero,
-    startingPrice: '$499',
-    turnaroundTime: '7–10 business days',
+    startingPrice: '$269',
+    turnaroundTime: '5–7 business days',
     conversionFeatures: [
       'Structured Practice Areas Matrix with Deal Examples',
       'Partner Directory with Direct Consultation Booking',
@@ -124,8 +124,8 @@ export const DEMO_PROJECTS: DemoProject[] = [
 ];
 
 export const AGENCY_STATS = [
-  { value: 'From $299', label: 'Affordable Starter Launch Pricing' },
-  { value: '7–10 Days', label: 'Average Time to Live Website' },
+  { value: 'From $149', label: 'Affordable Starter Launch Pricing' },
+  { value: '5–7 Days', label: 'Average Time to Live Website' },
   { value: '100% Owned', label: 'No Monthly Page-Builder Lock-In' },
   { value: '30 Days Care', label: 'Free Post-Launch Support & Revisions' }
 ];
@@ -134,8 +134,8 @@ export const AGENCY_PACKAGES = [
   {
     id: 'starter',
     name: 'Starter Business Launch',
-    price: '$299',
-    turnaround: '3–5 business days',
+    price: '$149',
+    turnaround: '2–4 business days',
     popular: false,
     description: 'Designed for small businesses, freelancers, and local services who need a professional, trustworthy presence without overspending.',
     deliverables: [
@@ -150,8 +150,8 @@ export const AGENCY_PACKAGES = [
   {
     id: 'growth',
     name: 'Growth & Booking Suite',
-    price: '$549',
-    turnaround: '7–10 business days',
+    price: '$299',
+    turnaround: '5–7 business days',
     popular: true,
     description: 'Our most popular package. Built for businesses that want interactive appointment booking, product sales, or dynamic service calculators.',
     deliverables: [
@@ -166,8 +166,8 @@ export const AGENCY_PACKAGES = [
   {
     id: 'enterprise',
     name: 'Full Custom Platform',
-    price: '$899',
-    turnaround: '10–14 business days',
+    price: '$499',
+    turnaround: '7–10 business days',
     popular: false,
     description: 'For businesses needing a unique digital application with custom calculators, multi-step wizards, or extensive content management.',
     deliverables: [

@@ -26,7 +26,7 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
               <span>Oronde Web Studio</span>
             </div>
             <p className="text-xs text-neutral-400 max-w-sm">
-              Custom-crafted, high-converting digital storefronts and websites for small businesses and founders starting at $299.
+              Custom-crafted, high-converting digital storefronts and websites for small businesses and founders starting at $149.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
               onClick={onOpenInquiry}
               className="bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider transition-colors"
             >
-              Start Your Website (From $299)
+              Start Your Website (From $149)
             </button>
             <button
               onClick={scrollToTop}
@@ -71,11 +71,11 @@ export const AgencyFooter: React.FC<AgencyFooterProps> = ({
               Demo Websites
             </div>
             <ul className="space-y-2 text-neutral-400">
-              <li><a href="#demos" className="hover:text-white transition-colors">Artisan Roastery & Cafe ($349)</a></li>
-              <li><a href="#demos" className="hover:text-white transition-colors">Aura Aesthetics & Dental ($499)</a></li>
-              <li><a href="#demos" className="hover:text-white transition-colors">Architecture & Interiors ($549)</a></li>
-              <li><a href="#demos" className="hover:text-white transition-colors">PulseFlow SaaS Automation ($599)</a></li>
-              <li><a href="#demos" className="hover:text-white transition-colors">Corporate Legal Advisory ($499)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Artisan Roastery & Cafe ($189)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Aura Aesthetics & Dental ($269)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Architecture & Interiors ($299)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">PulseFlow SaaS Automation ($329)</a></li>
+              <li><a href="#demos" className="hover:text-white transition-colors">Corporate Legal Advisory ($269)</a></li>
             </ul>
           </div>
 

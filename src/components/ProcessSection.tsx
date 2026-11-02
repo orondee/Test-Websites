@@ -86,7 +86,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenInquiry })
             onClick={onOpenInquiry}
             className="bg-neutral-900 hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900 text-white px-8 py-3.5 rounded-xl text-xs uppercase font-bold tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
           >
-            <span>Start Your 7-Day Project (From $299)</span>
+            <span>Start Your 7-Day Project (From $149)</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

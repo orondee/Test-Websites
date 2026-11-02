@@ -37,7 +37,7 @@ export const AgencyHero: React.FC<AgencyHeroProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="font-semibold">Independent Web Studio</span>
               <span className="text-neutral-400 dark:text-neutral-600">·</span>
-              <span className="text-neutral-500 dark:text-neutral-400">Custom Websites From $299</span>
+              <span className="text-neutral-500 dark:text-neutral-400">Custom Websites From $149</span>
             </div>
 
             {/* Jaw-Dropping Agency Headline */}

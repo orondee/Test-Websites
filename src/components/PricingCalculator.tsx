@@ -10,6 +10,7 @@ import {
   Zap
 } from 'lucide-react';
 import { CalculatorState } from '../types';
+import { calculatePricingEstimate, BASE_PRICES, EXTRA_PAGE_RATE, ADDON_COSTS } from '../utils/pricing';
 
 interface PricingCalculatorProps {
   onSelectEstimate: (summary: {
@@ -34,45 +35,30 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
   const [animations, setAnimations] = useState(true);
   const [rush, setRush] = useState(false);
 
-  // Significantly Lowered Beginner-Friendly Pricing
-  const basePrices: Record<CalculatorState['websiteType'], number> = {
-    starter: 249,
-    business: 349,
-    ecommerce: 449,
-    saas: 499,
-    bespoke: 549
-  };
+  const estimateResult = calculatePricingEstimate({
+    siteType,
+    pagesCount,
+    cms,
+    booking,
+    ecommerce,
+    seo,
+    animations,
+    rush
+  });
 
-  const baseDays: Record<CalculatorState['websiteType'], number> = {
-    starter: 4,
-    business: 6,
-    ecommerce: 8,
-    saas: 9,
-    bespoke: 10
-  };
+  const {
+    basePrice,
+    extraPageCost,
+    totalEstimate,
+    timelineString
+  } = estimateResult;
 
-  const extraPageCost = Math.max(0, pagesCount - 4) * 35;
-  const cmsCost = cms ? 60 : 0;
-  const bookingCost = booking ? 50 : 0;
-  const ecommerceCost = ecommerce ? 80 : 0;
-  const seoCost = seo ? 40 : 0;
-  const animationsCost = animations ? 45 : 0;
-  const rushCost = rush ? 75 : 0;
-
-  const totalEstimate = 
-    basePrices[siteType] + 
-    extraPageCost + 
-    cmsCost + 
-    bookingCost + 
-    ecommerceCost + 
-    seoCost + 
-    animationsCost + 
-    rushCost;
-
-  let estimatedDays = baseDays[siteType] + Math.floor((pagesCount - 4) / 4);
-  if (rush) estimatedDays = Math.max(3, Math.floor(estimatedDays * 0.6));
-
-  const timelineString = `${estimatedDays} Business Days`;
+  const cmsCost = cms ? ADDON_COSTS.cms : 0;
+  const bookingCost = booking ? ADDON_COSTS.booking : 0;
+  const ecommerceCost = ecommerce ? ADDON_COSTS.ecommerce : 0;
+  const seoCost = seo ? ADDON_COSTS.seo : 0;
+  const animationsCost = animations ? ADDON_COSTS.animations : 0;
+  const rushCost = rush ? ADDON_COSTS.rush : 0;
 
   const activeFeaturesList: string[] = [
     `${pagesCount} Custom Responsive Pages`,
@@ -119,11 +105,11 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {[
-                  { id: 'starter', label: 'Starter Presence', sub: 'Simple 1-4 page brand site', price: '$249' },
-                  { id: 'business', label: 'Local Business / Clinic', sub: 'Services & appointments', price: '$349' },
-                  { id: 'ecommerce', label: 'E-Commerce Store', sub: 'Products, cart, checkout', price: '$449' },
-                  { id: 'saas', label: 'B2B SaaS / Tech', sub: 'Product tour & trial signup', price: '$499' },
-                  { id: 'bespoke', label: 'Consultancy / Law', sub: 'High-trust practice advisory', price: '$549' }
+                  { id: 'starter', label: 'Starter Presence', sub: 'Simple 1-4 page brand site', price: '$129' },
+                  { id: 'business', label: 'Local Business / Clinic', sub: 'Services & appointments', price: '$199' },
+                  { id: 'ecommerce', label: 'E-Commerce Store', sub: 'Products, cart, checkout', price: '$249' },
+                  { id: 'saas', label: 'B2B SaaS / Tech', sub: 'Product tour & trial signup', price: '$289' },
+                  { id: 'bespoke', label: 'Consultancy / Law', sub: 'High-trust practice advisory', price: '$299' }
                 ].map(type => (
                   <button
                     key={type.id}
@@ -151,7 +137,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                   2. Number of Custom Layout Pages
                 </span>
                 <span className="font-mono text-emerald-400 font-bold text-sm">
-                  {pagesCount} Pages {pagesCount > 4 ? `(+$${(pagesCount - 4) * 35})` : '(Included)'}
+                  {pagesCount} Pages {pagesCount > 4 ? `(+$${(pagesCount - 4) * EXTRA_PAGE_RATE})` : '(Included)'}
                 </span>
               </div>
               <input
@@ -180,42 +166,42 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
                     checked: booking,
                     toggle: () => setBooking(!booking),
                     title: 'Appointment Booking Wizard',
-                    cost: '+$50',
+                    cost: `+$${ADDON_COSTS.booking}`,
                     desc: 'Real-time multi-step calendar & consultation intake'
                   },
                   {
                     checked: ecommerce,
                     toggle: () => setEcommerce(!ecommerce),
                     title: 'Online Store / Cart Drawer',
-                    cost: '+$80',
+                    cost: `+$${ADDON_COSTS.ecommerce}`,
                     desc: 'Product catalog, cart drawer & Stripe checkout'
                   },
                   {
                     checked: cms,
                     toggle: () => setCms(!cms),
                     title: 'Client Content Management',
-                    cost: '+$60',
+                    cost: `+$${ADDON_COSTS.cms}`,
                     desc: 'Edit text and photos without writing code'
                   },
                   {
                     checked: seo,
                     toggle: () => setSeo(!seo),
                     title: 'Google SEO & Indexing',
-                    cost: '+$40',
+                    cost: `+$${ADDON_COSTS.seo}`,
                     desc: 'Meta tags, sitemap, and Google Search Console setup'
                   },
                   {
                     checked: animations,
                     toggle: () => setAnimations(!animations),
                     title: 'Smooth Micro-Interactions',
-                    cost: '+$45',
+                    cost: `+$${ADDON_COSTS.animations}`,
                     desc: 'Fluid settling motion, interactive sliders, 60fps feel'
                   },
                   {
                     checked: rush,
                     toggle: () => setRush(!rush),
                     title: 'Priority 3-Day Sprint',
-                    cost: '+$75',
+                    cost: `+$${ADDON_COSTS.rush}`,
                     desc: 'Dedicated fast-track sprint to go live in 3 days'
                   }
                 ].map((addon, idx) => (
@@ -262,11 +248,11 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({
             <div className="space-y-2.5 text-xs">
               <div className="flex items-center justify-between text-neutral-400">
                 <span>Base Platform Build:</span>
-                <span className="font-mono text-white">${basePrices[siteType]}</span>
+                <span className="font-mono text-white">${basePrice}</span>
               </div>
               {extraPageCost > 0 && (
                 <div className="flex items-center justify-between text-neutral-400">
-                  <span>Additional Pages ({pagesCount - 4} pages @ $35):</span>
+                  <span>Additional Pages ({pagesCount - 4} pages @ ${EXTRA_PAGE_RATE}):</span>
                   <span className="font-mono text-white">+${extraPageCost}</span>
                 </div>
               )}

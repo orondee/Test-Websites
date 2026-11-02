@@ -13,6 +13,7 @@ import { DemoViewerModal } from './components/DemoViewerModal';
 import { InquiryModal } from './components/InquiryModal';
 import { AccessibilityModal } from './components/AccessibilityModal';
 import { ShareFeedbackButton } from './components/ShareFeedbackModal';
+import { FadeInSection } from './components/ui/FadeInSection';
 import { DEMO_PROJECTS } from './data/demoData';
 import { DemoProject, AccessibilitySettings } from './types';
 
@@ -184,71 +185,89 @@ export const App: React.FC = () => {
 
       <main className="flex-1">
         {/* Agency Hero */}
-        <AgencyHero
-          onExploreDemos={scrollToDemos}
-          onOpenCalculator={scrollToCalculator}
-          onQuickLaunchDemo={handleLaunchDemo}
-        />
+        <FadeInSection yOffset={16} duration={0.75} forceReducedMotion={a11ySettings.reducedMotion}>
+          <AgencyHero
+            onExploreDemos={scrollToDemos}
+            onOpenCalculator={scrollToCalculator}
+            onQuickLaunchDemo={handleLaunchDemo}
+          />
+        </FadeInSection>
 
         {/* 5 Demo Websites Showcase Grid */}
-        <DemoShowcaseSection
-          demos={DEMO_PROJECTS}
-          onLaunchDemo={handleLaunchDemo}
-          onOrderThisType={handleOrderThisType}
-        />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <DemoShowcaseSection
+            demos={DEMO_PROJECTS}
+            onLaunchDemo={handleLaunchDemo}
+            onOrderThisType={handleOrderThisType}
+          />
+        </FadeInSection>
 
         {/* Interactive Scope & Readiness Matcher */}
-        <ProjectReadinessQuiz
-          onSelectRecommendedPackage={handleSelectPackage}
-          onExploreDemo={handleLaunchDemo}
-          onOpenInquiry={() => {
-            setInquiryPackage('growth');
-            setInquiryEstimate(undefined);
-            setIsInquiryOpen(true);
-          }}
-        />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <ProjectReadinessQuiz
+            onSelectRecommendedPackage={handleSelectPackage}
+            onExploreDemo={handleLaunchDemo}
+            onOpenInquiry={() => {
+              setInquiryPackage('growth');
+              setInquiryEstimate(undefined);
+              setIsInquiryOpen(true);
+            }}
+          />
+        </FadeInSection>
 
         {/* Interactive Pricing Calculator with lowered starter pricing */}
-        <PricingCalculator
-          onSelectEstimate={handleSelectEstimate}
-        />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <PricingCalculator
+            onSelectEstimate={handleSelectEstimate}
+          />
+        </FadeInSection>
 
         {/* Website Packages */}
-        <PackagesSection
-          onSelectPackage={handleSelectPackage}
-        />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <PackagesSection
+            onSelectPackage={handleSelectPackage}
+          />
+        </FadeInSection>
 
         {/* Why Custom Wins */}
-        <WhyChooseUs />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <WhyChooseUs />
+        </FadeInSection>
 
         {/* 7-Day Process */}
-        <ProcessSection
-          onOpenInquiry={() => {
-            setInquiryPackage('starter');
-            setInquiryEstimate(undefined);
-            setIsInquiryOpen(true);
-          }}
-        />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <ProcessSection
+            onOpenInquiry={() => {
+              setInquiryPackage('starter');
+              setInquiryEstimate(undefined);
+              setIsInquiryOpen(true);
+            }}
+          />
+        </FadeInSection>
 
         {/* Frequently Asked Questions */}
-        <FAQSection
-          onOpenInquiry={() => {
-            setInquiryPackage('starter');
-            setInquiryEstimate(undefined);
-            setIsInquiryOpen(true);
-          }}
-        />
+        <FadeInSection forceReducedMotion={a11ySettings.reducedMotion}>
+          <FAQSection
+            onOpenInquiry={() => {
+              setInquiryPackage('starter');
+              setInquiryEstimate(undefined);
+              setIsInquiryOpen(true);
+            }}
+          />
+        </FadeInSection>
       </main>
 
       {/* Agency Footer */}
-      <AgencyFooter
-        onOpenInquiry={() => {
-          setInquiryPackage('starter');
-          setInquiryEstimate(undefined);
-          setIsInquiryOpen(true);
-        }}
-        onOpenAccessibility={() => setIsA11yOpen(true)}
-      />
+      <FadeInSection yOffset={12} duration={0.6} forceReducedMotion={a11ySettings.reducedMotion}>
+        <AgencyFooter
+          onOpenInquiry={() => {
+            setInquiryPackage('starter');
+            setInquiryEstimate(undefined);
+            setIsInquiryOpen(true);
+          }}
+          onOpenAccessibility={() => setIsA11yOpen(true)}
+        />
+      </FadeInSection>
 
       {/* Accessibility Preferences Modal */}
       <AccessibilityModal

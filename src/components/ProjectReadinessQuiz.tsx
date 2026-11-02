@@ -34,8 +34,8 @@ export const ProjectReadinessQuiz: React.FC<ProjectReadinessQuizProps> = ({
       return {
         packageId: 'growth',
         packageName: 'Growth & Store Suite',
-        price: '$549',
-        turnaround: '7–10 Days',
+        price: '$299',
+        turnaround: '5–7 Days',
         demoId: 'coffee-roastery',
         demoName: 'Brew & Origin Roasters (Cafe & Store)',
         pitch: 'You need an e-commerce or menu system with direct ordering and online payment collection.'
@@ -45,8 +45,8 @@ export const ProjectReadinessQuiz: React.FC<ProjectReadinessQuizProps> = ({
       return {
         packageId: 'growth',
         packageName: 'Growth & Appointments Suite',
-        price: '$549',
-        turnaround: '7–10 Days',
+        price: '$299',
+        turnaround: '5–7 Days',
         demoId: 'dental-clinic',
         demoName: 'Aura Facial & Dental (Booking Wizard)',
         pitch: 'An automated 24/7 multi-step consultation scheduler that fills your client calendar without phone tag.'
@@ -56,8 +56,8 @@ export const ProjectReadinessQuiz: React.FC<ProjectReadinessQuizProps> = ({
       return {
         packageId: 'growth',
         packageName: 'Growth & Portfolio Suite',
-        price: '$549',
-        turnaround: '7–10 Days',
+        price: '$299',
+        turnaround: '5–7 Days',
         demoId: 'architecture-studio',
         demoName: 'Vander & Kanso Architecture (Editorial Atelier)',
         pitch: 'A high-end editorial showcase with project blueprint modals and luxury photography hierarchy.'
@@ -67,8 +67,8 @@ export const ProjectReadinessQuiz: React.FC<ProjectReadinessQuizProps> = ({
       return {
         packageId: 'enterprise',
         packageName: 'Full Custom Platform',
-        price: '$899',
-        turnaround: '10–14 Days',
+        price: '$499',
+        turnaround: '7–10 Days',
         demoId: 'saas-platform',
         demoName: 'PulseFlow SaaS (Interactive Sandbox)',
         pitch: 'A high-converting product landing with an interactive pipeline simulator and dynamic pricing calculator.'
@@ -77,8 +77,8 @@ export const ProjectReadinessQuiz: React.FC<ProjectReadinessQuizProps> = ({
     return {
       packageId: 'starter',
       packageName: 'Starter Business Launch',
-      price: '$299',
-      turnaround: '3–5 Days',
+      price: '$149',
+      turnaround: '2–4 Days',
       demoId: 'legal-advisory',
       demoName: 'Vanguard & Sterling (Corporate Advisory)',
       pitch: 'A streamlined, ultra-fast 4-page presence that establishes immediate credibility and captures leads.'

@@ -39,7 +39,7 @@ export const WhyChooseUs: React.FC = () => {
               <div className="space-y-4">
                 {[
                   {
-                    title: 'Fair, Affordable Starter Rates (From $299)',
+                    title: 'Fair, Affordable Starter Rates (From $149)',
                     desc: 'High-quality web engineering accessible to local businesses and new ventures.'
                   },
                   {

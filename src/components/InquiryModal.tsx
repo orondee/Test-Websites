@@ -38,7 +38,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const [industry, setIndustry] = useState('Hospitality / Restaurant');
   const [selectedDemo, setSelectedDemo] = useState(initialDemoId || 'coffee-roastery');
   const [selectedPackage, setSelectedPackage] = useState(initialPackage || 'starter');
-  const [budgetRange, setBudgetRange] = useState('$299 – $550');
+  const [budgetRange, setBudgetRange] = useState('$149 – $299');
   const [timeline, setTimeline] = useState('Within 7 days');
   const [projectBrief, setProjectBrief] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -205,10 +205,10 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                     onChange={e => setBudgetRange(e.target.value)}
                     className="w-full text-xs px-3 py-2 border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg text-neutral-900 dark:text-white focus:outline-none focus:border-emerald-500"
                   >
-                    <option>$299 (Starter Business Launch)</option>
-                    <option>$350 – $550 (Growth & Booking Suite)</option>
-                    <option>$550 – $900 (Custom Platform)</option>
-                    <option>$900+ (Specialized Application)</option>
+                    <option>$149 (Starter Business Launch)</option>
+                    <option>$150 – $300 (Growth & Booking Suite)</option>
+                    <option>$300 – $500 (Custom Platform)</option>
+                    <option>$500+ (Specialized Multi-App Suite)</option>
                   </select>
                 </div>
                 <div>

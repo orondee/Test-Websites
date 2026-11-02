@@ -135,7 +135,7 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               onClick={closeMenu}
               className="py-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
             >
-              Website Packages (From $299)
+              Website Packages (From $149)
             </a>
             <a 
               href="#why-us" 
@@ -177,7 +177,7 @@ export const AgencyHeader: React.FC<AgencyHeaderProps> = ({
               }}
               className="w-full py-2.5 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 text-xs uppercase tracking-wider font-semibold rounded-lg flex items-center justify-center gap-2 shadow-sm"
             >
-              <span>Start Your Website Build (From $299)</span>
+              <span>Start Your Website Build (From $149)</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
