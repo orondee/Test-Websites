@@ -14,6 +14,7 @@ import {
   CreditCard
 } from 'lucide-react';
 import coffeeHeroImg from '../assets/images/demo_coffee_roastery_1793552553944.jpg';
+import { Image } from '../components/Image';
 
 interface CoffeeProduct {
   id: string;
@@ -268,11 +269,11 @@ export const CoffeeDemo: React.FC = () => {
 
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-lg overflow-hidden border border-[#E8DFD5] shadow-lg aspect-4/3 bg-[#E8DFD5]">
-              <img
+              <Image
                 src={coffeeHeroImg}
                 alt="Brew & Origin Roastery bar and espresso bar"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                fill
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
                 <div className="text-white space-y-1">

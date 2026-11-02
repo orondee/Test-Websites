@@ -15,6 +15,7 @@ import {
   ArrowRight 
 } from 'lucide-react';
 import dentalHeroImg from '../assets/images/demo_dental_clinic_1793552553382.jpg';
+import { Image } from '../components/Image';
 
 interface ServiceItem {
   id: string;
@@ -207,11 +208,11 @@ export const DentalDemo: React.FC = () => {
 
           <div className="lg:col-span-5">
             <div className="rounded-lg overflow-hidden border border-[#E6E1D8] shadow-lg aspect-4/3 bg-[#E6E1D8]">
-              <img
+              <Image
                 src={dentalHeroImg}
                 alt="Aura Dental clinic lounge and aesthetic reception"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                fill
+                priority
               />
             </div>
           </div>

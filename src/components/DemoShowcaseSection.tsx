@@ -12,6 +12,7 @@ import {
   Eye
 } from 'lucide-react';
 import { BusinessIndustry, DemoProject } from '../types';
+import { Image } from './Image';
 
 interface DemoShowcaseSectionProps {
   demos: DemoProject[];
@@ -107,11 +108,11 @@ export const DemoShowcaseSection: React.FC<DemoShowcaseSectionProps> = ({
                   }`}
                   onClick={() => onLaunchDemo(demo)}
                 >
-                  <img
+                  <Image
                     src={demo.heroImage}
                     alt={`${demo.name} interactive demo preview`}
-                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 ease-out"
-                    referrerPolicy="no-referrer"
+                    fill
+                    className="group-hover:scale-103 transition-transform duration-700 ease-out"
                   />
 
                   {/* Gradient Scrim */}

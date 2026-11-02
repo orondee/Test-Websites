@@ -13,6 +13,7 @@ import {
   Maximize2
 } from 'lucide-react';
 import architectureHeroImg from '../assets/images/demo_architecture_villa_1793552554911.jpg';
+import { Image } from '../components/Image';
 
 interface Project {
   id: string;
@@ -212,11 +213,12 @@ export const ArchitectureDemo: React.FC = () => {
 
           <div className="lg:col-span-5">
             <div className="rounded-lg overflow-hidden border border-[#E3E0DA] shadow-xl aspect-4/3 relative group">
-              <img
+              <Image
                 src={architectureHeroImg}
                 alt="Cliffside Cantilever Residence by Vander & Kanso"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                referrerPolicy="no-referrer"
+                fill
+                priority
+                className="transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                 <div className="text-white space-y-1">
